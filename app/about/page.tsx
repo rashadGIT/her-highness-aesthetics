@@ -57,7 +57,7 @@ export default function AboutPage() {
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-start">
             {/* Image */}
-            <FadeIn direction="left" className="sticky top-24">
+            <FadeIn direction="left" className="md:sticky md:top-24">
               <div className="relative aspect-[4/5] rounded-card overflow-hidden">
                 <Image
                   src={`${process.env.NEXT_PUBLIC_CLOUDFRONT_DOMAIN || ""}/images/about-zee.jpg`}
