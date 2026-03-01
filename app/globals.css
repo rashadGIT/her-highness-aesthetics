@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  --font-cormorant: 'Cormorant Garamond', Georgia, serif;
+  --font-dm-sans: 'DM Sans', system-ui, sans-serif;
+
+  --color-bg: #F9F5F0;
+  --color-surface: #FFFFFF;
+  --color-primary: #2D1B2E;
+  --color-accent: #C9A96E;
+  --color-blush: #E8C5C5;
+  --color-ink: #1A1A1A;
+  --color-muted: #6B6B6B;
+  --color-success: #4A7C59;
+
+  --radius-card: 12px;
+  --radius-btn: 6px;
+
+  --shadow-card: 0 2px 20px rgba(45, 27, 46, 0.08);
+  --shadow-card-hover: 0 8px 40px rgba(45, 27, 46, 0.16);
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-dm-sans);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-cormorant);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+
+  /* Prevent zoom on iOS for form inputs */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="number"],
+  input[type="date"],
+  textarea,
+  select {
+    font-size: 16px;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section {
+    @apply py-20 md:py-28;
+  }
+
+  .section-sm {
+    @apply py-12 md:py-16;
+  }
+
+  /* Gold gradient text */
+  .text-gradient {
+    background: linear-gradient(135deg, #C9A96E 0%, #E8D5B0 50%, #C9A96E 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Gold shimmer animation for premium feel */
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      #C9A96E 0%,
+      #E8D5B0 25%,
+      #C9A96E 50%,
+      #E8D5B0 75%,
+      #C9A96E 100%
+    );
+    background-size: 200% auto;
+    animation: shimmer 3s linear infinite;
+  }
+
+  /* Card base */
+  .card {
+    @apply bg-surface rounded-card shadow-card;
+  }
+
+  /* Label caps style */
+  .label {
+    @apply text-xs font-sans font-medium uppercase tracking-widest text-muted;
+  }
+
+  /* Divider */
+  .divider {
+    @apply border-t border-stone-200;
+  }
+}
+
+@layer utilities {
+  /* Aspect ratios for gallery */
+  .aspect-portrait {
+    aspect-ratio: 3/4;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-bg);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #C9A96E;
+    border-radius: 3px;
+  }
+
+  /* Selection color */
+  ::selection {
+    background: rgba(201, 169, 110, 0.3);
+    color: var(--color-primary);
+  }
+
+  /* Focus ring */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2;
+  }
+
+  /* Overlay for dark sections */
+  .overlay-dark {
+    background: linear-gradient(
+      to bottom,
+      rgba(45, 27, 46, 0.5) 0%,
+      rgba(45, 27, 46, 0.75) 100%
+    );
+  }
+}
