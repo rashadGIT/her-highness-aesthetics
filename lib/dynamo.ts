@@ -9,12 +9,22 @@ import {
   type ScanCommandInput,
 } from "@aws-sdk/lib-dynamodb";
 
-const client = new DynamoDBClient({
-  region: process.env.AWS_REGION || "us-east-1",
+const awsConfig = {
+  region: process.env.HHA_AWS_REGION || process.env.AWS_REGION || "us-east-1",
   ...(process.env.DYNAMODB_ENDPOINT
     ? { endpoint: process.env.DYNAMODB_ENDPOINT }
     : {}),
-});
+  ...(process.env.HHA_AWS_ACCESS_KEY_ID
+    ? {
+        credentials: {
+          accessKeyId: process.env.HHA_AWS_ACCESS_KEY_ID,
+          secretAccessKey: process.env.HHA_AWS_SECRET_KEY || "",
+        },
+      }
+    : {}),
+};
+
+const client = new DynamoDBClient(awsConfig);
 
 export const docClient = DynamoDBDocumentClient.from(client, {
   marshallOptions: { removeUndefinedValues: true },

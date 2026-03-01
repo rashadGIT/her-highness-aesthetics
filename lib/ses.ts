@@ -2,7 +2,17 @@ import { SESClient, SendEmailCommand } from "@aws-sdk/client-ses";
 import { Booking } from "./dynamo";
 import { formatDate, formatTime, formatDuration, getGoogleCalendarUrl } from "./utils";
 
-const ses = new SESClient({ region: process.env.AWS_REGION || "us-east-1" });
+const ses = new SESClient({
+  region: process.env.HHA_AWS_REGION || process.env.AWS_REGION || "us-east-1",
+  ...(process.env.HHA_AWS_ACCESS_KEY_ID
+    ? {
+        credentials: {
+          accessKeyId: process.env.HHA_AWS_ACCESS_KEY_ID,
+          secretAccessKey: process.env.HHA_AWS_SECRET_KEY || "",
+        },
+      }
+    : {}),
+});
 
 const FROM_EMAIL = process.env.SES_FROM_EMAIL || "hhaesthetics25@gmail.com";
 const REPLY_TO = process.env.SES_REPLY_TO || "hhaesthetics25@gmail.com";
