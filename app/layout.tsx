@@ -89,10 +89,11 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <head>
+      <head suppressHydrationWarning>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          suppressHydrationWarning
         />
       </head>
       <body className="bg-bg text-ink font-sans">

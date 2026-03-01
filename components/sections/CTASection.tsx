@@ -32,7 +32,7 @@ export function CTASection() {
               href="/book"
               variant="secondary"
               size="lg"
-              className="bg-white text-accent hover:bg-white/90"
+              className="bg-black text-accent hover:bg-black/90"
             >
               Book Your Appointment →
             </LinkButton>
