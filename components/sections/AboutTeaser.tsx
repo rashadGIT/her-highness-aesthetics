@@ -13,7 +13,7 @@ export function AboutTeaser() {
             <div className="relative aspect-[4/5] rounded-card overflow-hidden">
               <div className="absolute inset-0 bg-primary/30 z-10" />
               <Image
-                src="/images/about-zee.jpg"
+                src={`${process.env.NEXT_PUBLIC_CLOUDFRONT_DOMAIN || ""}/images/about-zee.jpg`}
                 alt="Zee — certified ombré brow and lash artist at Her Highness Aesthetics"
                 fill
                 className="object-cover object-top"

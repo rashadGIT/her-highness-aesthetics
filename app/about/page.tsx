@@ -60,7 +60,7 @@ export default function AboutPage() {
             <FadeIn direction="left" className="sticky top-24">
               <div className="relative aspect-[4/5] rounded-card overflow-hidden">
                 <Image
-                  src="/images/about-zee.jpg"
+                  src={`${process.env.NEXT_PUBLIC_CLOUDFRONT_DOMAIN || ""}/images/about-zee.jpg`}
                   alt="Zee — certified PMU and lash artist at Her Highness Aesthetics, Dallas TX"
                   fill
                   className="object-cover object-top"

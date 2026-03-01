@@ -9,7 +9,7 @@ export function Hero() {
       {/* Background image overlay */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
-        style={{ backgroundImage: "url('/images/hero-bg.jpg')" }}
+        style={{ backgroundImage: `url('${process.env.NEXT_PUBLIC_CLOUDFRONT_DOMAIN || ""}/images/hero-bg.jpg')` }}
         aria-hidden="true"
       />
 

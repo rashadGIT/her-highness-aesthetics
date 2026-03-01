@@ -10,16 +10,18 @@ export const metadata: Metadata = {
     "Browse before and after photos of soft ombré brows and lash extensions by certified artist Zee in Dallas, TX.",
 };
 
+const CF = process.env.NEXT_PUBLIC_CLOUDFRONT_DOMAIN || "";
+
 const GALLERY = [
-  { src: "/images/gallery/1.jpg", service: "Soft Ombré Brows", alt: "Soft ombré brow result" },
-  { src: "/images/gallery/2.jpg", service: "Classic Lashes", alt: "Classic lash extension result" },
-  { src: "/images/gallery/3.jpg", service: "Soft Ombré Brows", alt: "Natural ombré brow result" },
-  { src: "/images/gallery/4.jpg", service: "Brow Touch-Up", alt: "Brow touch-up result" },
-  { src: "/images/gallery/5.jpg", service: "Classic Lashes", alt: "Classic lash extension result" },
-  { src: "/images/gallery/6.jpg", service: "Soft Ombré Brows", alt: "Soft powder brow result" },
-  { src: "/images/gallery/7.jpg", service: "Soft Ombré Brows", alt: "Ombré brow healed result" },
-  { src: "/images/gallery/8.jpg", service: "Classic Lashes", alt: "Natural lash extension result" },
-  { src: "/images/gallery/9.jpg", service: "Soft Ombré Brows", alt: "Full face ombré brow result" },
+  { src: `${CF}/images/gallery/1.jpg`, service: "Soft Ombré Brows", alt: "Soft ombré brow result" },
+  { src: `${CF}/images/gallery/2.jpg`, service: "Classic Lashes", alt: "Classic lash extension result" },
+  { src: `${CF}/images/gallery/3.jpg`, service: "Soft Ombré Brows", alt: "Natural ombré brow result" },
+  { src: `${CF}/images/gallery/4.jpg`, service: "Brow Touch-Up", alt: "Brow touch-up result" },
+  { src: `${CF}/images/gallery/5.jpg`, service: "Classic Lashes", alt: "Classic lash extension result" },
+  { src: `${CF}/images/gallery/6.jpg`, service: "Soft Ombré Brows", alt: "Soft powder brow result" },
+  { src: `${CF}/images/gallery/7.jpg`, service: "Soft Ombré Brows", alt: "Ombré brow healed result" },
+  { src: `${CF}/images/gallery/8.jpg`, service: "Classic Lashes", alt: "Natural lash extension result" },
+  { src: `${CF}/images/gallery/9.jpg`, service: "Soft Ombré Brows", alt: "Full face ombré brow result" },
 ];
 
 export default function GalleryPage() {

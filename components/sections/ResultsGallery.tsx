@@ -3,13 +3,15 @@ import Link from "next/link";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { StaggerContainer, StaggerItem } from "@/components/ui/FadeIn";
 
+const CF = process.env.NEXT_PUBLIC_CLOUDFRONT_DOMAIN || "";
+
 const GALLERY_IMAGES = [
-  { src: "/images/gallery/1.jpg", alt: "Soft ombré brow result — client 1", label: "Soft Ombré Brows" },
-  { src: "/images/gallery/2.jpg", alt: "Classic lash extensions result — client 2", label: "Classic Lashes" },
-  { src: "/images/gallery/3.jpg", alt: "Soft ombré brow result — client 3", label: "Soft Ombré Brows" },
-  { src: "/images/gallery/4.jpg", alt: "Brow touch-up result — client 4", label: "Brow Touch-Up" },
-  { src: "/images/gallery/5.jpg", alt: "Classic lash extensions result — client 5", label: "Classic Lashes" },
-  { src: "/images/gallery/6.jpg", alt: "Soft ombré brow result — client 6", label: "Soft Ombré Brows" },
+  { src: `${CF}/images/gallery/1.jpg`, alt: "Soft ombré brow result — client 1", label: "Soft Ombré Brows" },
+  { src: `${CF}/images/gallery/2.jpg`, alt: "Classic lash extensions result — client 2", label: "Classic Lashes" },
+  { src: `${CF}/images/gallery/3.jpg`, alt: "Soft ombré brow result — client 3", label: "Soft Ombré Brows" },
+  { src: `${CF}/images/gallery/4.jpg`, alt: "Brow touch-up result — client 4", label: "Brow Touch-Up" },
+  { src: `${CF}/images/gallery/5.jpg`, alt: "Classic lash extensions result — client 5", label: "Classic Lashes" },
+  { src: `${CF}/images/gallery/6.jpg`, alt: "Soft ombré brow result — client 6", label: "Soft Ombré Brows" },
 ];
 
 export function ResultsGallery() {
